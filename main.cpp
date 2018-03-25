@@ -1,19 +1,9 @@
 #include <stdio.h>
 #include <GL/glut.h>
 
-int pntX1, pntY1, r;
+int r;
 
-void plot(int x, int y)
-{
-    glColor3ub(255, 0, 0);
-	glBegin(GL_POLYGON);
-	glVertex2i(x+pntX1, y+pntY1);
-	glEnd();
-}
-
-
-void myInit (void)
-{
+void myInit (void) {
 	glClearColor(1.0, 1.0, 1.0, 0.0);
 	glColor3f(0.0f, 0.0f, 0.0f);
 	glPointSize(4.0);
@@ -22,9 +12,7 @@ void myInit (void)
 	gluOrtho2D(-350.0, 350.0, -350.0, 350.0);
 }
 
-
-void midPointCircleAlgo()
-{
+void midPointCircleAlgo() {
 	int x = 0;
 	int y = r;
 	float decision = 1 - r;
@@ -68,7 +56,6 @@ int main(int argc, char** argv) {
 
     printf("Enter Radius R:  ");
 	scanf("%d", &r);
-
 
 	glutInit(&argc, argv);
 	glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
